@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodBond – Know Your Blood, Save a Life</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <!-- Google Translate -->
+  <script type="text/javascript" 
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div id="google_translate_element"></div>
+    <button class="toggle-btn" onclick="toggleTheme()">🌙 Toggle Theme</button>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>BloodConnect</h1>
+    <!-- <p>Know Your Blood, Save a Life</p> -->
+    <div class="hero-buttons">
+      <a href="#blood-map" class="btn">Find Blood Near You</a>
+      <a href="#volunteer" class="btn">Become a Volunteer</a>
+    </div>
+  </header>
+
+  <!-- Impact Dashboard -->
+  <section id="dashboard">
+    <h2>Our Impact</h2>
+    <div class="stats">
+      <div><span class="counter" data-target="500">0</span>+ Tested</div>
+      <div><span class="counter" data-target="1000">0</span>+ Educated</div>
+      <div><span class="counter" data-target="200">0</span>+ Donors Registered</div>
+      <div><span class="counter" data-target="50">0</span>+ Requests Fulfilled</div>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section id="quiz">
+    <h2>Myth vs Fact Quiz</h2>
+    <p>Test your knowledge about blood donation!</p>
+    <div class="quiz-box">
+      <p id="quiz-question">Loading question...</p>
+      <button onclick="checkAnswer(true)">True</button>
+      <button onclick="checkAnswer(false)">False</button>
+      <p id="quiz-result"></p>
+    </div>
+  </section>
+
+  <!-- Volunteer Form -->
+  <section id="volunteer">
+    <h2>Become a Volunteer</h2>
+    <form class="volunteer-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <select required>
+        <option value="">Select Blood Group</option>
+        <option>O+</option><option>O-</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option>
+      </select>
+      <textarea placeholder="Why do you want to volunteer?" rows="4"></textarea>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  <!-- Blood Map -->
+  <section id="blood-map">
+    <h2>Find Blood Near You 🩸</h2>
+    <div id="map"></div>
+  </section>
+
+  <!-- Blood Request Board -->
+  <section id="requests">
+    <h2>Urgent Blood Requests</h2>
+    <div id="request-list"></div>
+    <h3>Post a New Request</h3>
+    <form class="request-form">
+      <input type="text" placeholder="Name" required>
+      <select required>
+        <option value="">Blood Group</option>
+        <option>O+</option><option>O-</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option>
+      </select>
+      <input type="text" placeholder="Location" required>
+      <input type="tel" placeholder="Contact Number" required>
+      <button type="submit" class="btn">Submit Request</button>
+    </form>
+  </section>
+
+  <!-- Success Stories -->
+  <section id="stories">
+    <h2>Success Stories ❤️</h2>
+    <div class="story-list">
+      <div class="story-card">
+        <p>"After a road accident, a donor’s blood saved my father’s life. Eternally grateful!"</p>
+        <h4>- Priya, Pune</h4>
+      </div>
+      <div class="story-card">
+        <p>"Donating blood was quick and safe. Felt amazing to save 3 lives with one donation."</p>
+        <h4>- Rahul, Nashik</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback -->
+  <section id="feedback">
+    <h2>What People Say</h2>
+    <div class="feedback-list" id="feedback-list">
+      <div class="feedback-card">
+        <p>"Donating blood made me feel like a hero. It’s safe and quick!"</p>
+        <h4>- Ramesh ⭐⭐⭐⭐☆</h4>
+      </div>
+    </div>
+    <h3>Leave Your Feedback</h3>
+    <form class="feedback-form">
+      <input type="text" placeholder="Your Name" required>
+      <select required>
+        <option value="">Rating</option>
+        <option>⭐⭐⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐☆</option>
+        <option>⭐⭐⭐☆☆</option>
+      </select>
+      <textarea placeholder="Your Feedback" rows="3" required></textarea>
+      <button type="submit" class="btn">Submit Feedback</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 BloodBond | Created by HJ,RG & Team</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

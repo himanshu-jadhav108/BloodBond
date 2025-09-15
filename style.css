@@ -1,0 +1,319 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Theme Variables */
+:root {
+  --primary-color: #b71c1c;
+  --accent-color: #ff6b6b;
+  --bg-color: #fff;
+  --text-color: #222;
+  --card-bg: #f8f8f8;
+}
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --card-bg: #1e1e1e;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes glow {
+  0% { box-shadow: 0 0 5px var(--accent-color); }
+  50% { box-shadow: 0 0 20px var(--accent-color); }
+  100% { box-shadow: 0 0 5px var(--accent-color); }
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: #fff;
+  animation: fadeInUp 0.8s ease-out;
+}
+.toggle-btn {
+  background: var(--accent-color);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.toggle-btn:hover {
+  background: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(rgba(183,28,28,0.7),rgba(183,28,28,0.7)), url('blood-donation.jpg') no-repeat center/cover;
+  color: #fff;
+  animation: fadeInUp 1s ease-out;
+  background-attachment: fixed;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeInUp 1.2s ease-out;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.hero .btn {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.hero .btn.glow {
+  animation: glow 2s infinite;
+}
+
+/* Sections */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1.5rem;
+}
+.counter {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+/* Quiz */
+.quiz-box {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 20px auto;
+  animation: fadeInUp 1s ease-out;
+}
+.quiz-box button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.quiz-box button:hover {
+  background: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Forms */
+.volunteer-form, .feedback-form, .request-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px auto;
+  gap: 10px;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+button.submit-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button.submit-btn:hover {
+  background: var(--accent-color);
+  transform: scale(1.05);
+}
+.btn{
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* Map */
+#map {
+  height: 400px;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  border: 3px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+
+/* Requests */
+#request-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.request-card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.request-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Stories */
+.story-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.story-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Feedback */
+.feedback-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.feedback-card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-style: italic;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feedback-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  animation: fadeInUp 1.5s ease-out;
+}
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer p {
+  margin: 5px 0;
+}
+footer .social a {
+  margin: 0 10px;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+footer .social a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+footer .social i {
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+  }
+  .quiz-box, .volunteer-form, .feedback-form, .request-form {
+    width: 90%;
+  }
+  .request-card, .story-card, .feedback-card {
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
