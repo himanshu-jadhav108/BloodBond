@@ -47,6 +47,6 @@ BloodConnect/
 
 1. Clone the repository  
    ```bash
-   git clone 
+   git clone https://himanshu-jadhav108.github.io/BloodBond/
    cd bloodbond
 
