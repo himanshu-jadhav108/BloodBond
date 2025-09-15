@@ -316,4 +316,43 @@ footer .social i {
     flex-direction: column;
     align-items: center;
   }
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero .btn {
+    width: 90%;
+    margin: 5px 0;
+  }
+}
+/* Additional Enhancements */
+button, .btn {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+button:active, .btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+input, select, textarea {
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+}
+/* Smooth Scroll for Anchor Links */
+a[href^="#"] {
+  cursor: pointer;
+}
+a[href^="#"]:hover {
+  text-decoration: underline;
+}
+/* Dark Mode Toggle Button */
+.toggle-btn {
+  font-weight: bold;
+}
+.toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--accent-color);
 }
